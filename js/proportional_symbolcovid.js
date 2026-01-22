@@ -59,7 +59,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
 // create legend
 const legend = document.getElementById('legend');
 //set up legend grades and labels
-var labels = ['<strong>Magnitude</strong>'],
+var labels = ['<strong>Number of cases</strong>'],
     vbreak;
 //iterate through grades and create a scaled circle and label for each
 for (var i = 0; i < grades.length; i++) {
