@@ -52,7 +52,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
     map.on('click', 'covid-points', (event) => {
         new mapboxgl.Popup()
             .setLngLat(event.features[0].geometry.coordinates)
-            .setHTML(`<strong>Number of Cases:</strong> ${event.features[0].properties.mag}`)
+            .setHTML(`<strong>Number of Cases:</strong> ${event.features[0].properties.cases}`)
             .addTo(map);
     });
 });
