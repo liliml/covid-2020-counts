@@ -5,7 +5,7 @@ let map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/dark-v10',
     zoom: 5, // starting zoom
     minZoom: 4, // minimum zoom level of the map
-    center: [138, 38] // starting center
+    center: [-122, 47.5] // starting center
 });
 //16 values for grades and radii, TODO: need 16 colors right now have 3
 const grades = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000],
