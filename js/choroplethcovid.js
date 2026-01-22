@@ -58,16 +58,16 @@ async function geojsonFetch() {
 
     
     const layers = [
-        'less then 3000',
-        '3000-3499',
-        '3500-3999',
-        '4000-4499',
-        '4500-4999',
-        '5000-5499',
-        '5500-5999',
-        '6000-6499',
-        '6500-6999',
-        '7000 or more'
+        'Less then 10%',
+        '10-19%',
+        '20-29%',
+        '30-39%',
+        '40-49%',
+        '50-59%',
+        '60-69',
+        '70-79',
+        '80-89',
+        '90-100%'
     ];
     const colors = [
         '#FFEDA0', 
@@ -104,7 +104,7 @@ async function geojsonFetch() {
             layers: ['us_covid_data-layer']
         });
         document.getElementById('text-description').innerHTML = county.length ?
-            `<h3>${county[0].properties.county}</h3><p><strong><em>${county[0].properties.rates}</strong> percentage of people who had covid in 2020 per 10k people within the county (based on 2018 population census)</em></p>` :
+            `<h3>${county[0].properties.county} county, ${county[0].properties.state} state</h3><p><strong><em>${county[0].properties.rates}</strong> percent of people had covid in 2020 per 10k people within ${county[0].properties.county} county (based on 2018 population census)</em></p>` :
             `<p>Hover over a state county!</p>`;
     });
 }
