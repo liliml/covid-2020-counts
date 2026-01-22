@@ -7,9 +7,10 @@ let map = new mapboxgl.Map({
     minZoom: 4, // minimum zoom level of the map
     center: [138, 38] // starting center
 });
-const grades = [0, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000],
+//16 values for grades and radii, TODO: need 16 colors right now have 3
+const grades = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000],
     colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)'],
-    radii = [5, 15, 20];
+    radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 //load data to the map as new layers.
 //map.on('load', function loadingData() {
 map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
@@ -26,7 +27,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
             'paint': {
                 // increase the radii of the circle as the zoom level and dbh value increases
                 'circle-radius': {
-                    'property': 'mag',
+                    'property': 'cases',
                     'stops': [
                         [grades[0], radii[0]],
                         [grades[1], radii[1]],
@@ -34,7 +35,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
                     ]
                 },
                 'circle-color': {
-                    'property': 'mag',
+                    'property': 'cases',
                     'stops': [
                         [grades[0], colors[0]],
                         [grades[1], colors[1]],
@@ -51,7 +52,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
     map.on('click', 'covid-points', (event) => {
         new mapboxgl.Popup()
             .setLngLat(event.features[0].geometry.coordinates)
-            .setHTML(`<strong>Magnitude:</strong> ${event.features[0].properties.mag}`)
+            .setHTML(`<strong>Number of Cases:</strong> ${event.features[0].properties.mag}`)
             .addTo(map);
     });
 });
