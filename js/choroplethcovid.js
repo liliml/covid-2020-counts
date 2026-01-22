@@ -104,7 +104,7 @@ async function geojsonFetch() {
             layers: ['us_covid_data-layer']
         });
         document.getElementById('text-description').innerHTML = county.length ?
-            `<h3>${county[0].properties.county} county, ${county[0].properties.state} state</h3><p><strong><em>${county[0].properties.rates}</strong> percent of people had covid in 2020 per 10k people within ${county[0].properties.county} county (based on 2018 population census)</em></p>` :
+            `<h3>${county[0].properties.county} county, ${county[0].properties.state} state</h3><p><strong><em>${county[0].properties.rates}</strong> percent of people had covid in 2020 per 10k people within ${county[0].properties.county} county (based on 2018 ACS 5 year estimates from the US census)</em></p>` :
             `<p>Hover over a state county!</p>`;
     });
 }
