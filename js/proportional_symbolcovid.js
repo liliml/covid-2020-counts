@@ -7,9 +7,10 @@ let map = new mapboxgl.Map({
     minZoom: 4, // minimum zoom level of the map
     center: [-122, 47.5] // starting center
 });
-//16 values for grades and radii, TODO: need 16 colors right now have 3
-const grades = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000],
-    colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)'],
+//10 values for numcases (number of covid cases) and radii, TODO: need 10 colors right now have 3
+//20000 and radii of value 14 are for number of cases >= 20000
+const numcases = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000],
+    colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)','rgba(33, 42, 205, 1)', 'rgba(0, 255, 208, 1)', 'rgba(98, 0, 255, 1)', 'rgba(249, 148, 185, 1)', 'rgba(247, 70, 126, 1)', 'rgba(255, 0, 81, 1)', 'rgba(110, 0, 0, 1)'],
     radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 //load data to the map as new layers.
 //map.on('load', function loadingData() {
@@ -20,26 +21,65 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
         type: 'geojson',
         data: 'assets/us-covid-2020-counts.json'
     });
+
+
+
+    //ATTEMPT TO ADD SECTION BELOW FOR SHAPEFILE FOR OUTLINE OF COUNTIES
+    map.addSource('us-covid-2020-rates', {
+        type: 'geojson',
+        data: 'assets/us-covid-2020-rates.json'
+    });
+    //ATTEMPT TO ADD SECTION BELOW FOR SHAPEFILE FOR OUTLINE OF COUNTIES
+    map.addLayer({
+        'id': 'us_covid_data-layer',
+        'type': 'fill',
+        'source': 'us-covid-2020-rates',
+        'paint': {
+            //'fill-color': '#FFEDA0',
+            'fill-outline-color': '#BBBBBB',
+            'fill-opacity': 0.7
+        }
+    });
+
+
+
     map.addLayer({
             'id': 'covid-points',
             'type': 'circle',
             'source': 'us-covid-2020-counts',
             'paint': {
                 // increase the radii of the circle as the zoom level and dbh value increases
+                // numcases[0] is value at index 0 of the array numcases, value is 0, numcases[5] is value at index 5
+                // in the numcases array from above, is this case is 4000 
+                // (this also applies for hte radii values in the code below is referencing the radii array)
+                // each circle is lower number to one before the next upper number, so cases is 0-499 cases, 
+                // 500 is 500-999 cases, so on and so forth. but 20000 is 20000 and above cases 
                 'circle-radius': {
                     'property': 'cases',
                     'stops': [
-                        [grades[0], radii[0]],
-                        [grades[1], radii[1]],
-                        [grades[2], radii[2]]
+                        [numcases[0], radii[0]],
+                        [numcases[1], radii[1]],
+                        [numcases[2], radii[2]],
+                        [numcases[3], radii[3]],
+                        [numcases[4], radii[4]],
+                        [numcases[5], radii[5]],
+                        [numcases[6], radii[6]],
+                        [numcases[7], radii[7]],
+                        [numcases[8], radii[8]]
                     ]
                 },
                 'circle-color': {
                     'property': 'cases',
                     'stops': [
-                        [grades[0], colors[0]],
-                        [grades[1], colors[1]],
-                        [grades[2], colors[2]]
+                        [numcases[0], colors[0]],
+                        [numcases[1], colors[1]],
+                        [numcases[2], colors[2]],
+                        [numcases[3], colors[3]],
+                        [numcases[4], colors[4]],
+                        [numcases[5], colors[5]],
+                        [numcases[6], colors[6]],
+                        [numcases[7], colors[7]],
+                        [numcases[8], colors[8]]
                     ]
                 },
                 'circle-stroke-color': 'white',
@@ -60,12 +100,12 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
 });
 // create legend
 const legend = document.getElementById('legend');
-//set up legend grades and labels
+//set up legend numcases and labels
 var labels = ['<strong>Number of COVID Cases in The County in 2020</strong>'],
     vbreak;
-//iterate through grades and create a scaled circle and label for each
-for (var i = 0; i < grades.length; i++) {
-    vbreak = grades[i];
+//iterate through numcases and create a scaled circle and label for each
+for (var i = 0; i < numcases.length; i++) {
+    vbreak = numcases[i];
     // you need to manually adjust the radius of each dot on the legend 
     // in order to make sure the legend can be properly referred to the dot on the map.
     dot_radii = 2 * radii[i];

@@ -19,7 +19,7 @@ async function geojsonFetch() {
             type: 'geojson',
             data: us_covid_data
         });
-        console.log("got here");
+        //console.log("got here");
         
         map.addLayer({
             'id': 'us_covid_data-layer',
