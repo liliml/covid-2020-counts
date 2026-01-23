@@ -3,9 +3,9 @@ mapboxgl.accessToken =
 let map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/dark-v10',
-    zoom: 5, // starting zoom
+    zoom: 4.2, // starting zoom
     minZoom: 4, // minimum zoom level of the map
-    center: [-122, 47.5] // starting center
+    center: [-95, 40.5] // starting center
 });
 //10 values for numcases (number of covid cases) and radii, TODO: need 10 colors right now have 3
 //20000 and radii of value 14 are for number of cases >= 20000
