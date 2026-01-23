@@ -83,7 +83,14 @@ async function geojsonFetch() {
     ];
     
     const legend = document.getElementById('legend');
-    legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>";
+
+    //TESTING FOR ADDING SOURCE LINK: 
+    const source =
+    '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
+    //legend.innerHTML = labels.join('') + source;
+
+    //ORGINAL: legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>";
+    legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>" + source;
     
     layers.forEach((layer, i) => {
         const color = colors[i];
@@ -99,6 +106,7 @@ async function geojsonFetch() {
         legend.appendChild(item);
     });
     
+    
     map.on('mousemove', ({point}) => {
         const county = map.queryRenderedFeatures(point, {
             layers: ['us_covid_data-layer']
@@ -108,5 +116,6 @@ async function geojsonFetch() {
             `<p>Hover over a state county!</p>`;
     });
 }
+
 
 geojsonFetch();
