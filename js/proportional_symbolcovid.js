@@ -10,7 +10,7 @@ let map = new mapboxgl.Map({
 //10 values for numcases (number of covid cases) and radii, TODO: need 10 colors right now have 3
 //20000 and radii of value 14 are for number of cases >= 20000
 const numcases = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000],
-    colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)','rgba(33, 42, 205, 1)', 'rgba(0, 255, 208, 1)', 'rgba(98, 0, 255, 1)', 'rgba(249, 148, 185, 1)', 'rgba(247, 70, 126, 1)', 'rgba(255, 0, 81, 1)', 'rgba(110, 0, 0, 1)'],
+    colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)','rgba(33, 42, 205, 1)', 'rgba(0, 255, 208, 1)', 'rgba(98, 0, 255, 1)', 'rgba(249, 148, 185, 1)', 'rgba(247, 70, 126, 1)', 'rgba(255, 0, 81, 1)', 'rgba(95, 27, 27, 1)'],
     radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 //load data to the map as new layers.
 //map.on('load', function loadingData() {
