@@ -85,12 +85,17 @@ async function geojsonFetch() {
     const legend = document.getElementById('legend');
 
     //TESTING FOR ADDING SOURCE LINK: 
+    //ORGINAL TEST BELOW:
+    //const source =
+    //'<p style="text-align: left; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
+    //Source for creating bold text with HTML: https://www.w3schools.com/html/html_formatting.asp
     const source =
-    '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
-    //legend.innerHTML = labels.join('') + source;
+    '<p><b>Sources:</b></p><p style="text-align: left; font-size:10pt"><a href="https://data.census.gov/table/ACSDP5Y2018.DP05?g=0100000US$050000&d=ACS+5-Year+Estimates+Data+Profiles&hidePreview=true">ACS 5 Year Estimates 2018 for Calculating COVID Rates</a></p><p style="text-align: left; font-size:10pt"><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">US Census Bureau Data for US County Shapefiles</a></p>';
+
 
     //ORGINAL: legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>";
-    legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>" + source;
+    //NOTE: Don't add source with + source at end of line below or source will show before the percentages in the legend
+    legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>";
     
     layers.forEach((layer, i) => {
         const color = colors[i];
@@ -106,7 +111,9 @@ async function geojsonFetch() {
         legend.appendChild(item);
     });
     
-    
+    //TEST CODE BELOW ADDED SOURCE HERE SINCE NEED TO RENDER LEGEND FIRST WITH CODE ABOVE, THEN ADD SOURCES TO BOTTOM OF LEGEND
+    legend.innerHTML += source;
+
     map.on('mousemove', ({point}) => {
         const county = map.queryRenderedFeatures(point, {
             layers: ['us_covid_data-layer']

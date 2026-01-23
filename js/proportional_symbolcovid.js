@@ -138,7 +138,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
 // create legend
 const legend = document.getElementById('legend');
 //set up legend numcases and labels
-var labels = ['<strong>Number of COVID Cases in The County in 2020</strong>'],
+var labels = ['<strong>Number of COVID Cases in the County in 2020</strong>'],
     vbreak;
 //iterate through numcases and create a scaled circle and label for each
 for (var i = 0; i < numcases.length; i++) {
@@ -152,6 +152,11 @@ for (var i = 0; i < numcases.length; i++) {
         dot_radii + 'px; "></i> <span class="dot-label" style="top: ' + dot_radii / 2 + 'px;">' + vbreak +
         '</span></p>');
 }
+
+//ORIGINAL FOR SOURCE SECTION: 
+//const source =
+//    '<p style="text-align: left; font-size:10pt">Source: <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">NYT COVID Cases & Death Rates</a></p>';
+
 const source =
-    '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
+    '<p><b>Sources:</b></p><p style="text-align: left; font-size:10pt"><a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">NYT COVID Cases & Death Rates</a></p><p style="text-align: left; font-size:10pt"><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">US Census Bureau Data for US County Shapefiles</a></p>';
 legend.innerHTML = labels.join('') + source;

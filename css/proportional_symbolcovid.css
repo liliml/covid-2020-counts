@@ -13,18 +13,22 @@ body {
 /* the layout of the legend panel */
 #legend {
     position: absolute;
-    bottom: 0;
+    /* increased value for "bottom" property to 35px from 0px to shift whole legend up so source can be on the screen and not below the map */
+    bottom: 35px; 
     right: 0;
     width: 110px;
     background: #fff;
     margin-right: 20px;
-    margin-bottom: 40px;
-    height: 400px;
+    /* Changed margin-bottom property to 0px from 40px in line below to shift legend downwards*/
+    margin-bottom: 0px;
+    /* Changed height property from 400 to 550px to fit the sources into the legend*/
+    height: 550px;
     width: 180px;
     padding: 10px;
     border-radius: 3px;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
+    opacity: 0.7;
 }
 
 /* each line for a break */
