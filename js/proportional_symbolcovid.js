@@ -66,7 +66,8 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
                         [numcases[5], radii[5]],
                         [numcases[6], radii[6]],
                         [numcases[7], radii[7]],
-                        [numcases[8], radii[8]]
+                        [numcases[8], radii[8]],
+                        [numcases[9], radii[9]]
                     ]
                 },
                 'circle-color': {
@@ -80,7 +81,8 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
                         [numcases[5], colors[5]],
                         [numcases[6], colors[6]],
                         [numcases[7], colors[7]],
-                        [numcases[8], colors[8]]
+                        [numcases[8], colors[8]],
+                        [numcases[9], colors[9]]
                     ]
                 },
                 'circle-stroke-color': 'white',
@@ -99,6 +101,40 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
 
 
 });
+
+
+
+    //TESTING FROM ABOVE: 
+    const covidvals = [
+        '0-499',
+        '500-999',
+        '1000-1999',
+        '2000-2999',
+        '3000-3999',
+        '4000-4999',
+        '5000-9999',
+        '10000-14999',
+        '15000-19999',
+        '20000+'
+    ];
+
+    // covidvals.forEach((layer, i) => {
+    //     const color = colors[i];
+    //     const item = document.createElement('div');
+    //     const key = document.createElement('span');
+    //     key.className = 'legend-key';
+    //     key.style.backgroundColor = color;
+    
+    //     const value = document.createElement('span');
+    //     value.innerHTML = `${layer}`;
+    //     item.appendChild(key);
+    //     item.appendChild(value);
+    //     legend.appendChild(item);
+    // });
+    
+
+
+
 // create legend
 const legend = document.getElementById('legend');
 //set up legend numcases and labels
@@ -106,7 +142,7 @@ var labels = ['<strong>Number of COVID Cases in The County in 2020</strong>'],
     vbreak;
 //iterate through numcases and create a scaled circle and label for each
 for (var i = 0; i < numcases.length; i++) {
-    vbreak = numcases[i];
+    vbreak = covidvals[i];
     // you need to manually adjust the radius of each dot on the legend 
     // in order to make sure the legend can be properly referred to the dot on the map.
     dot_radii = 2 * radii[i];

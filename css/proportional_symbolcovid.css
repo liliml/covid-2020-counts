@@ -19,9 +19,11 @@ body {
     background: #fff;
     margin-right: 20px;
     margin-bottom: 40px;
-    padding: 10px 20px 10px 10px;
+    height: 400px;
+    width: 180px;
+    padding: 10px;
     border-radius: 3px;
-    text-align: center;
+    text-align: left;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -35,7 +37,7 @@ body {
 /* basic style for a dot/circle */
 .dot {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 10px;
     border-radius: 50%;
     opacity: 0.6;
 }
