@@ -36,6 +36,7 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
         'source': 'us-covid-2020-rates',
         'paint': {
             //'fill-color': '#FFEDA0',
+            //need line below to show seperation between counties
             'fill-outline-color': '#BBBBBB',
             'fill-opacity': 0.7
         }
