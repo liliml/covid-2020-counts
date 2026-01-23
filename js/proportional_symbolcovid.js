@@ -52,14 +52,16 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
     map.on('click', 'covid-points', (event) => {
         new mapboxgl.Popup()
             .setLngLat(event.features[0].geometry.coordinates)
-            .setHTML(`<strong>Number of Cases:</strong> ${event.features[0].properties.cases}`)
+            .setHTML(`<strong>Number of Cases in ${event.features[0].properties.county} county in ${event.features[0].properties.state} state:</strong> ${event.features[0].properties.cases}`)
             .addTo(map);
     });
+
+
 });
 // create legend
 const legend = document.getElementById('legend');
 //set up legend grades and labels
-var labels = ['<strong>Number of cases</strong>'],
+var labels = ['<strong>Number of COVID Cases in The County in 2020</strong>'],
     vbreak;
 //iterate through grades and create a scaled circle and label for each
 for (var i = 0; i < grades.length; i++) {

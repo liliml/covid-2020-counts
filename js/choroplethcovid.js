@@ -83,7 +83,7 @@ async function geojsonFetch() {
     ];
     
     const legend = document.getElementById('legend');
-    legend.innerHTML = "<b>Percentage of people per county who had covid in 2020<br>(people per 10k within the county)</b><br><br>";
+    legend.innerHTML = "<b>Percentage of People per County Who Had COVID in 2020<br>(People Per 10k Within The County)</b><br><br>";
     
     layers.forEach((layer, i) => {
         const color = colors[i];
