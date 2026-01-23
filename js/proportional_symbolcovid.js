@@ -8,9 +8,9 @@ let map = new mapboxgl.Map({
     center: [-122, 47.5] // starting center
 });
 //16 values for grades and radii, TODO: need 16 colors right now have 3
-const grades = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000],
+const grades = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000],
     colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)'],
-    radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 //load data to the map as new layers.
 //map.on('load', function loadingData() {
 map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
