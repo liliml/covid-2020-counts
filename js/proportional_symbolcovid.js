@@ -2,11 +2,13 @@ mapboxgl.accessToken =
     'pk.eyJ1Ijoicm9zZS0xNjgiLCJhIjoiY202aWYxY3lsMDdxdjJpcHJoaHlmZzdiNiJ9.3wUanYJCI6409InuRs9e7A';
 let map = new mapboxgl.Map({
     container: 'map', // container ID
+    projection: 'albers', //source referenced for map projection type: https://docs.mapbox.com/mapbox-gl-js/guides/projections/
     style: 'mapbox://styles/mapbox/dark-v10',
     zoom: 4.2, // starting zoom
     minZoom: 4, // minimum zoom level of the map
     center: [-95, 40.5] // starting center
 });
+
 //10 values for numcases (number of covid cases) and radii, TODO: need 10 colors right now have 3
 //20000 and radii of value 14 are for number of cases >= 20000
 const numcases = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000],

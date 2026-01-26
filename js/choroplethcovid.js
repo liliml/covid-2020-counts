@@ -2,6 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm9zZS0xNjgiLCJhIjoiY202aWYxY3lsMDdxdjJpcHJoa
 
 const map = new mapboxgl.Map({
         container: 'map', // container ID
+        projection: 'albers', //source referenced for map projection type: https://docs.mapbox.com/mapbox-gl-js/guides/projections/
         style: 'mapbox://styles/mapbox/light-v10', // style URL
         zoom: 4.2, // starting zoom
         center: [-95, 40.5] // starting center

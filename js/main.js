@@ -2,6 +2,7 @@ mapboxgl.accessToken =
     'pk.eyJ1Ijoicm9zZS0xNjgiLCJhIjoiY202aWYxY3lsMDdxdjJpcHJoaHlmZzdiNiJ9.3wUanYJCI6409InuRs9e7A';
 let map = new mapboxgl.Map({
     container: 'map', // container ID
+    projection: 'albers', //source referenced for map projection type: https://docs.mapbox.com/mapbox-gl-js/guides/projections/
     style: 'mapbox://styles/mapbox/dark-v10',
     zoom: 5, // starting zoom
     minZoom: 4, // minimum zoom level of the map
