@@ -22,7 +22,7 @@ body {
     /* Changed margin-bottom property to 0px from 40px in line below to shift legend downwards*/
     margin-bottom: 0px;
     /* Changed height property from 400 to 550px to fit the sources into the legend*/
-    height: 550px;
+    height: 590px;
     width: 180px;
     padding: 10px;
     border-radius: 3px;
