@@ -25,7 +25,7 @@ proportional_symbolcovid is a proportinal symbol map of the US counties in each 
 ### **Map 3: Proportional Symbol COVID Death Counts Map**
 covid_death_counts_propsym is a proportinal symbol map of the US counties in each US state with a proprotinal symbol overlay of COVID death count per US county, with circles of varying sizes and shades depending on the number of deaths in the county. This map uses a basemap of the US counties. The map shows the number of COVID deaths in 2020 for each county in each state, ranging from 0 to 25000+. This map is designed to be an easy to understand visual representation of COVID death counts in 2020 in each county by any user regardless of their background knowledge about COVID. The color ramp was chosen to go from lighter to darker color as the data is numeric, with the colors ranging from a light grey for the number of COVID cases being from 0-499, and light pink fo 5000-9999 deaths, and black for 25000 or more deaths COVID in that county. When using the map, each county can be clicked on, and the amount of COVID deaths in that county in 2020 in that specific county will be diplayed in a pop up. The image below shows a screenshot of the map. Link to Map 3: [https://liliml.github.io/covid-2020-counts/covid_death_counts_propsym](https://liliml.github.io/covid-2020-counts/covid_death_counts_propsym)
 
-
+![alt text](./img/image3.png)
 
 ### **Libraries and Data Sources**
 - Libraries: There was no libraries used for this project.
