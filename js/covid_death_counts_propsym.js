@@ -12,8 +12,8 @@ let map = new mapboxgl.Map({
 //10 values for numcases (number of covid cases) and radii, TODO: need 10 colors right now have 3
 //20000 and radii of value 14 are for number of cases >= 20000
 const numcases = [0, 500, 1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000],
-    colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)','rgba(33, 42, 205, 1)', 'rgba(0, 255, 208, 1)', 'rgba(98, 0, 255, 1)', 'rgba(249, 148, 185, 1)', 'rgba(247, 70, 126, 1)', 'rgba(255, 0, 81, 1)', 'rgba(95, 27, 27, 1)'],
-    radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)','rgb(0, 195, 255)', 'rgb(4, 0, 255)', 'rgba(98, 0, 255, 1)', 'rgba(249, 148, 185, 1)', 'rgba(247, 70, 126, 1)', 'rgba(255, 0, 81, 1)', 'rgba(95, 27, 27, 1)', 'rgb(0, 0, 0)'],
+    radii = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 //load data to the map as new layers.
 //map.on('load', function loadingData() {
 map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
@@ -69,7 +69,8 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
                         [numcases[6], radii[6]],
                         [numcases[7], radii[7]],
                         [numcases[8], radii[8]],
-                        [numcases[9], radii[9]]
+                        [numcases[9], radii[9]],
+                        [numcases[10], radii[10]]
                     ]
                 },
                 'circle-color': {
@@ -84,7 +85,8 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
                         [numcases[6], colors[6]],
                         [numcases[7], colors[7]],
                         [numcases[8], colors[8]],
-                        [numcases[9], colors[9]]
+                        [numcases[9], colors[9]],
+                        [numcases[10], colors[10]]
                     ]
                 },
                 'circle-stroke-color': 'white',
@@ -117,7 +119,8 @@ map.on('load', () => { //simplifying the function statement: arrow with brackets
         '5000-9999',
         '10000-14999',
         '15000-19999',
-        '20000+'
+        '20000-24999',
+        '25000+'
     ];
 
     // covidvals.forEach((layer, i) => {
